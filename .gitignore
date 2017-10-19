@@ -4,3 +4,6 @@
 /.gradle/gradlew/settings.gradle
 /gradlew.bat
 /gradle
+/settings.gradle
+/gradlew
+/.gradle
