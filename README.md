@@ -6,3 +6,4 @@
 
 
 用来记录 LeetCode 的题目，目前只有 Algorithm 和 Database 的程序。
+*后续会使用golang代替Java*
