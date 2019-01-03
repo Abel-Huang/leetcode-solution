@@ -7,3 +7,30 @@
 
 用来记录 LeetCode 的题目，目前只有 Algorithm 和 Database 的程序。
 *后续会使用golang代替Java*
+
+## Idea
+### Zero
+
+### One
+
+### Two
+
+### Three
+
+### Four
+
+### Five
+#### 561 [Array partition](https://leetcode-cn.com/problems/array-partition-i/)
+sort, 然后取数组的奇数位。
+
+### Six
+
+### Seven
+
+### Eight
+
+### Nine
+#### 905 [Sort array by  parity](https://leetcode-cn.com/problems/sort-array-by-parity/)
+two pointers。
+
+

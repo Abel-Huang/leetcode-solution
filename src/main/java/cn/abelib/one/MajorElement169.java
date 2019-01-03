@@ -1,4 +1,6 @@
-package cn.abelib.one.major_element_169;
+package cn.abelib.one;
+
+import org.junit.Test;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -6,7 +8,7 @@ import java.util.Map;
 /**
  * Created by abel on 2018/9/21.
  */
-class Solution {
+public class MajorElement169 {
     public int majorityElement(int[] nums) {
         if (nums.length == 1){
             return nums[0];
@@ -25,10 +27,10 @@ class Solution {
         return 0;
     }
 
-    public static void main(String[] args) {
-        Solution solution = new Solution();
+    @Test
+    public void majorityElementTest() {
         int[] nums = {2,2,1,1,1,2,2};
-        int result = solution.majorityElement(nums);
+        int result = majorityElement(nums);
         System.err.println(result);
     }
 }

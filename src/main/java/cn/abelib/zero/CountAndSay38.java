@@ -1,9 +1,9 @@
-package cn.abelib.zero.count_and_say_38;
+package cn.abelib.zero;
 
 /**
  * Created by abel on 2018/9/22.
  */
-public class Solutiion {
+public class CountAndSay38 {
     public String countAndSay(int n) {
         if (n == 1){
             return "1";
@@ -14,5 +14,7 @@ public class Solutiion {
                 
             }
         }
+        // todo
+        return null;
     }
 }

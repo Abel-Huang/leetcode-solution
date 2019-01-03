@@ -8,3 +8,9 @@
 /gradlew
 /.gradle
 /build.gradle
+
+
+/.idea/*
+*/target/*
+*.iml
+/target
