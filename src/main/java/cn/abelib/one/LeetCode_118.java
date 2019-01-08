@@ -10,24 +10,23 @@ import java.util.List;
  * this part.
  */
 public class LeetCode_118 {
-    public static void main(String args[]){
-        int a=5;
+    public static void main(String args[]) {
+        int a = 5;
         System.out.println(generate(a).toString());
     }
-    public static List<List<Integer>> generate(int numRows) {
-        List<List<Integer>> pasTrian=new ArrayList<>();
-        if(numRows==0){
 
-        }
-        else{
-            for(int i=0;i<numRows;i++){
-                List<Integer> temp=new ArrayList<>();
-                for(int j=0;j<=i;j++){
-                    if(j>0&&j<i&&i>0){
-                        int trans=((pasTrian.get(i-1)).get(j-1)).intValue()+((pasTrian.get(i-1)).get(j)).intValue();
+    public static List<List<Integer>> generate(int numRows) {
+        List<List<Integer>> pasTrian = new ArrayList<>();
+        if (numRows == 0) {
+
+        } else {
+            for (int i = 0; i < numRows; i++) {
+                List<Integer> temp = new ArrayList<>();
+                for (int j = 0; j <= i; j++) {
+                    if (j > 0 && j < i && i > 0) {
+                        int trans = ((pasTrian.get(i - 1)).get(j - 1)).intValue() + ((pasTrian.get(i - 1)).get(j)).intValue();
                         temp.add(new Integer(trans));
-                    }
-                    else{
+                    } else {
                         temp.add(new Integer(1));
                     }
                 }

@@ -18,10 +18,10 @@ public class SortArrayByParity905 {
         int tail = A.length - 1;
         while (true) {
             while (A[head] % 2 == 0 && head < tail) {
-                head ++;
+                head++;
             }
             while (A[tail] % 2 == 1 && head < tail) {
-                tail --;
+                tail--;
             }
             if (head >= tail) {
                 break;

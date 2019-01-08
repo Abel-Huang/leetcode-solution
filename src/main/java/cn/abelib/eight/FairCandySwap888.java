@@ -17,9 +17,9 @@ public class FairCandySwap888 {
         for (int i = 0; i < B.length; i++) {
             sum2 += B[i];
         }
-        for (int i = 0; i < A.length; i ++) {
+        for (int i = 0; i < A.length; i++) {
             for (int j = 0; j < B.length; j++) {
-                if (sum1 + B[j] -A[i] == sum2 + A[i] - B[j]) {
+                if (sum1 + B[j] - A[i] == sum2 + A[i] - B[j]) {
                     return new int[]{A[i], B[j]};
                 }
             }

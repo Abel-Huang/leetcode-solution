@@ -12,7 +12,7 @@ public class ToeplitzMatrix766 {
     }
 
     @Test
-    public void isToeplitzMatrixTest(){
+    public void isToeplitzMatrixTest() {
 
     }
 }

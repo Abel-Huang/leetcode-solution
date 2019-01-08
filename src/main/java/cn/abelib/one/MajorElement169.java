@@ -10,14 +10,14 @@ import java.util.Map;
  */
 public class MajorElement169 {
     public int majorityElement(int[] nums) {
-        if (nums.length == 1){
+        if (nums.length == 1) {
             return nums[0];
         }
         Map<Integer, Integer> map = new HashMap<>();
-        for (int num : nums){
-            if (map.containsKey(num)){
+        for (int num : nums) {
+            if (map.containsKey(num)) {
                 map.put(num, map.get(num) + 1);
-                if (map.get(num) > nums.length/2){
+                if (map.get(num) > nums.length / 2) {
                     return num;
                 }
             } else {
@@ -29,7 +29,7 @@ public class MajorElement169 {
 
     @Test
     public void majorityElementTest() {
-        int[] nums = {2,2,1,1,1,2,2};
+        int[] nums = {2, 2, 1, 1, 1, 2, 2};
         int result = majorityElement(nums);
         System.err.println(result);
     }

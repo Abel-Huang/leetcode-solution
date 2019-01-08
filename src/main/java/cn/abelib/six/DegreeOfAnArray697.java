@@ -7,7 +7,7 @@ import java.util.*;
 /**
  * @Author: abel.huang
  * @Date: 2019-01-07 00:53
- *  HashMap
+ * HashMap
  */
 public class DegreeOfAnArray697 {
     public int findShortestSubArray(int[] nums) {
@@ -18,7 +18,7 @@ public class DegreeOfAnArray697 {
                 value.set(0, value.get(0) + 1);
                 value.set(2, i);
                 numMap.replace(nums[i], value);
-            }else {
+            } else {
                 List<Integer> value = new ArrayList<>(3);
                 value.add(1);
                 value.add(i);

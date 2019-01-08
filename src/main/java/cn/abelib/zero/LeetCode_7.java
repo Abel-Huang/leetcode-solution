@@ -5,7 +5,6 @@ package cn.abelib.zero;
  * Integer in Java, the range is -2147483648~2147483648
  * I write this program following a sample on Internet, if the number is over range
  * of Integer, return 0, like 21th line.
- *
  */
 public class LeetCode_7 {
     public static void main(String args[]) {
@@ -14,15 +13,15 @@ public class LeetCode_7 {
     }
 
     public static int reverse(int x) {
-        int result=0;
+        int result = 0;
         int temp;
-        while(x!=0){
-            temp=x%10;
-            if(result>Integer.MAX_VALUE/10||result<Integer.MIN_VALUE/10){
+        while (x != 0) {
+            temp = x % 10;
+            if (result > Integer.MAX_VALUE / 10 || result < Integer.MIN_VALUE / 10) {
                 return 0;
             }
-            result=result*10+temp;
-            x/=10;
+            result = result * 10 + temp;
+            x /= 10;
         }
         return result;
     }

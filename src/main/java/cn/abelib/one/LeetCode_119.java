@@ -8,21 +8,21 @@ import java.util.List;
  * This question is similar with 118th.
  */
 public class LeetCode_119 {
-    public static void main(String args[]){
-        int a=3;
+    public static void main(String args[]) {
+        int a = 3;
         System.out.println(generate(a).toString());
     }
+
     public static List<Integer> generate(int rowIndex) {
-        int haha=rowIndex+1;
-        List<List<Integer>> pasTrian=new ArrayList<>();
-        for(int i=0;i<haha;i++){
-            List<Integer> temp=new ArrayList<>();
-            for(int j=0;j<=i;j++){
-                if(j>0&&j<i&&i>0){
-                    int trans=((pasTrian.get(i-1)).get(j-1))+((pasTrian.get(i-1)).get(j));
+        int haha = rowIndex + 1;
+        List<List<Integer>> pasTrian = new ArrayList<>();
+        for (int i = 0; i < haha; i++) {
+            List<Integer> temp = new ArrayList<>();
+            for (int j = 0; j <= i; j++) {
+                if (j > 0 && j < i && i > 0) {
+                    int trans = ((pasTrian.get(i - 1)).get(j - 1)) + ((pasTrian.get(i - 1)).get(j));
                     temp.add(trans);
-                }
-                else{
+                } else {
                     temp.add(1);
                 }
             }

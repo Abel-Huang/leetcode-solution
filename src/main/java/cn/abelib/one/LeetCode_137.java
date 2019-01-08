@@ -13,9 +13,10 @@ import java.util.Map;
  */
 public class LeetCode_137 {
     public static void main(String args[]) {
-        int nums[]={1,22,1,22,1,22,0};
+        int nums[] = {1, 22, 1, 22, 1, 22, 0};
         System.out.println(singleNumber(nums));
     }
+
     public static int singleNumber(int[] nums) {
         Map<Integer, Integer> map1 = new HashMap<>();
         Map<Integer, Integer> map2 = new HashMap<>();

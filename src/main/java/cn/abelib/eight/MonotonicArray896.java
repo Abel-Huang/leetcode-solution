@@ -5,7 +5,7 @@ import org.junit.Test;
 /**
  * @Author: abel.huang
  * @Date: 2019-01-07 10:16
- *  TAG: 需要考虑数组是递增还是递减
+ * TAG: 需要考虑数组是递增还是递减
  */
 public class MonotonicArray896 {
     public boolean isMonotonic(int[] A) {
@@ -30,7 +30,7 @@ public class MonotonicArray896 {
 
     @Test
     public void isMonotonicTest() {
-        int[] A = {6,6, 1};
+        int[] A = {6, 6, 1};
         System.out.println(isMonotonic(A));
     }
 }
