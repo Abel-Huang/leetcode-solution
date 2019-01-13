@@ -31,7 +31,6 @@ public class LeetCode_118 {
                     }
                 }
                 pasTrian.add(temp);
-                //temp.clear();
             }
         }
         return pasTrian;
