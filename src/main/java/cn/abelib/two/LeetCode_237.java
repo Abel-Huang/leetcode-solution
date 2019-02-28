@@ -8,7 +8,7 @@ package cn.abelib.two;
 public class LeetCode_237 {
     public static void main(String args[]) {
         int nums[] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10};
-        //System.out.print(removeDuplicates(nums));
+        //System.out.print(new LeetCode_237().deleteNode(nums));
     }
 
     public void deleteNode(ListNode node) {

@@ -17,23 +17,19 @@ public class LeetCode_110 {
     }
 
     public static boolean isBalanced(TreeNode root) {
-        int result = 0;
-        if (root == null)
+        if (root == null) {
             return true;
-        int ldeep = maxDepth(root.left);
-        int rdeep = maxDepth(root.right);
-        result = ldeep - rdeep;
-        if (result > 1 || result < -1)
+        }
+        if (Math.abs(maxDepth(root.left) - maxDepth(root.right)) > 1) {
             return false;
+        }
         return isBalanced(root.left) && isBalanced(root.right);
     }
 
-    public static int maxDepth(TreeNode root) {
+    private static int maxDepth(TreeNode root) {
         int deep = 0;
         if (root != null) {
-            int ldeep = maxDepth(root.left);
-            int rdeep = maxDepth(root.right);
-            deep = Math.max(ldeep + 1, rdeep + 1);
+            deep = Math.max(maxDepth(root.left), maxDepth(root.right)) + 1;
         }
         return deep;
     }

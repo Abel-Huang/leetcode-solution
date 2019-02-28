@@ -1,5 +1,7 @@
 package cn.abelib.two;
 
+import org.junit.Test;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -9,18 +11,21 @@ import java.util.List;
  * Use a temp list to save every node.
  */
 public class LeetCode_206 {
-    public static void main(String args[]) {
+    @Test
+    public void test() {
         ListNode head = new ListNode(1);
         head.next = new ListNode(2);
         head.next.next = new ListNode(3);
         head.next.next.next = new ListNode(4);
-        while (reverseList(head) != null)
+        while (reverseList(head) != null) {
             System.out.print("  " + reverseList(head).val);
+        }
     }
 
-    public static ListNode reverseList(ListNode head) {
-        if (head == null || head.next == null)
+    public ListNode reverseList1(ListNode head) {
+        if (head == null || head.next == null) {
             return head;
+        }
         ListNode temp = head;
         List<Integer> list = new ArrayList<>();
         while (temp != null) {
@@ -36,7 +41,23 @@ public class LeetCode_206 {
         return head;
     }
 
-    public static class ListNode {
+    public ListNode reverseList(ListNode head) {
+        if (head == null || head.next == null) {
+            return head;
+        }
+        // 前一个节点
+        ListNode prev = null;
+        ListNode now = head;
+        while (now != null) {
+            ListNode next = now.next;
+            now.next = prev;
+            prev = now;
+            now = next;
+        }
+        return prev;
+    }
+
+    public class ListNode {
         int val;
         ListNode next;
 
