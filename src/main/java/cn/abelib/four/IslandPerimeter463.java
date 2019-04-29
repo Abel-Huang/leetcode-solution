@@ -59,6 +59,6 @@ public class IslandPerimeter463 {
 
     @Test
     public void islandPerimeterTest() {
-        // todo
+        System.out.println();
     }
 }
