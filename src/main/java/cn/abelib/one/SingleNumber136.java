@@ -10,15 +10,15 @@ import java.util.Map;
  *
  * @author abel-huang
  * @date 2016/7/18
- * This is a easy question about hashtable, we can use hashmap function
- * to loop the target array, and the remaining one is the answer.
- * <p>
- * notes: the most important thing is how to loop a map, I mean how to
- * use iterator to solve this type of questions.
  */
 public class SingleNumber136 {
+    /**
+     *  使用 HashMap
+     * @param nums
+     * @return
+     */
     public int singleNumberWithMap(int[] nums) {
-        Map<Integer, Integer> map = new HashMap<>();
+        Map<Integer, Integer> map = new HashMap<>(16);
 
         for (int i = 0; i < nums.length; i++) {
             if (map.containsKey(nums[i])) {
@@ -32,6 +32,11 @@ public class SingleNumber136 {
         return i.next();
     }
 
+    /**
+     * 位运算，异或
+     * @param nums
+     * @return
+     */
     public int singleNumber(int[] nums) {
         if (nums.length == 1) {
             return nums[0];

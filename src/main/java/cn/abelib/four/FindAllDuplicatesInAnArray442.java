@@ -2,9 +2,7 @@ package cn.abelib.four;
 
 import org.junit.Test;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
 
 /**
  * @Author: abel.huang
@@ -27,6 +25,30 @@ public class FindAllDuplicatesInAnArray442 {
             }
         }
         Arrays.stream(nums).forEach(System.out::println);
+        return list;
+    }
+
+
+    /**
+     *  done
+     * @param nums
+     * @return
+     */
+    public List<Integer> findDuplicates2(int[] nums) {
+        Map<Integer, Integer> map = new HashMap<>();
+        for(int num : nums) {
+            if(map.containsKey(num)) {
+                map.put(num, 2);
+            } else{
+                map.put(num, 1);
+            }
+        }
+        List<Integer> list = new ArrayList<>();
+        for(Map.Entry<Integer, Integer> entry: map.entrySet()) {
+            if(entry.getValue() == 2) {
+                list.add(entry.getKey());
+            }
+        }
         return list;
     }
 
