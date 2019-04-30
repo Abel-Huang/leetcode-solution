@@ -1,7 +1,5 @@
 package cn.abelib.solution.zero;
 
-import org.junit.Test;
-
 /**
  * @Author: abel.huang
  * @Date: 2019-02-12 21:29
@@ -37,15 +35,5 @@ public class Sqrtx69 {
 
         }
         return mid;
-    }
-
-    @Test
-    public void mySqrtTest() {
-
-        for (int i = 10000; i <= 100000; i++) {
-            System.out.println(i + " " + mySqrt(i));
-
-        }
-
     }
 }

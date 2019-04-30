@@ -5,10 +5,12 @@ import java.util.List;
 import java.util.Stack;
 
 /**
- * Created by abel-huang on 2016/8/8.
+ *
+ * @author abel-huang
+ * @date 2016/8/8
  * A inorderTraversal use stack.
  */
-public class LeetCode_94 {
+public class BinaryTreeInorderTraversal94 {
     public static void main(String args[]) {
         TreeNode root = new TreeNode(1);
         root.left = new TreeNode(1);

@@ -5,11 +5,13 @@ import java.util.List;
 import java.util.Stack;
 
 /**
- * Created by abel-huang on 2016/8/1.
+ *
+ * @author abel-huang
+ * @date 2016/8/1
  * Use inorder_travel, if the order number is bigger than the pre_one,
  * and this is a validBST.
  */
-public class LeetCode_98 {
+public class ValidateBinarySearchTree98 {
     public static void main(String args[]) {
         TreeNode root = new TreeNode(1);
         root.left = new TreeNode(2);
@@ -36,11 +38,13 @@ public class LeetCode_98 {
                 temp = temp.right;
             }
         }
-        if (list.isEmpty() || list.size() == 1)
+        if (list.isEmpty() || list.size() == 1) {
             return true;
+        }
         for (int i = 1; i < list.size(); i++) {
-            if (list.get(i) <= list.get(i - 1))
+            if (list.get(i) <= list.get(i - 1)) {
                 return false;
+            }
         }
         return true;
     }
