@@ -3,43 +3,41 @@ package cn.abelib.solution.zero;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
- * Created by abel-huang on 2016/7/28.
- * This is my fastest runtime, I beat more than 95% submissions in Java,
- * my idea is building a good map value type to store all isAnagram string
- * of this string array.
+ *
+ * @author abel-huang
+ * @date 2016/7/28
  */
-public class LeetCode_49 {
-    public static void main(String args[]) {
-        String s[] = {"eat", "tea", "tan", "ate", "nat", "bat"};
-        System.out.print(groupAnagrams(s).toString());
-    }
+public class GroupAnagrams49 {
 
-    public static List<List<String>> groupAnagrams(String[] strs) {
-        if (strs.length < 1)
+    public  List<List<String>> groupAnagrams(String[] strs) {
+        if (strs.length < 1) {
             return null;
+        }
         List<List<String>> lists = new ArrayList<>();
-        HashMap<String, Integer> hashMap = new HashMap<>();
+        Map<String, Integer> hashMap = new HashMap<>();
         int index = 0;
         for (int i = 0; i < strs.length; i++) {
             if (!hashMap.containsKey(isAnagram(strs[i]))) {
-                hashMap.put(isAnagram(strs[i]), new Integer(index));
+                hashMap.put(isAnagram(strs[i]),index);
                 List<String> strlist = new ArrayList<>();
                 strlist.add(strs[i]);
                 lists.add(strlist);
                 index++;
             } else {
-                lists.get((hashMap.get(isAnagram(strs[i]))).intValue()).add(strs[i]);
+                lists.get((hashMap.get(isAnagram(strs[i])))).add(strs[i]);
             }
         }
         return lists;
     }
 
-    public static String isAnagram(String s) {
-        if (s.length() <= 1)
+    private String isAnagram(String s) {
+        if (s.length() <= 1) {
             return s;
-        char str[] = s.toCharArray();
+        }
+        char[] str = s.toCharArray();
         char additionC;
         int index = 0;
         for (int i = 0; i < str.length; i++) {

@@ -1,22 +1,21 @@
 package cn.abelib.solution.zero;
 
 /**
- * Created by abel-huang on 2016/7/25.
+ *
+ * @author abel-huang
+ * @date 2016/7/25
  * This is the simplest questions about link list, I AC follow other's code,
  * but I can get many ideas about how to use link list in Java.
  */
-public class LeetCode_21 {
-    public static void main(String args[]) {
-        int nums[][] = {{1, 2, 0, 4}, {5, 6, 7, 8}, {9, 10, 11, 12}, {13, 0, 15, 16}};
-        //System.out.print(searchMatrix(nums,6));
-    }
-
-    public static ListNode mergeTwoLists(ListNode l1, ListNode l2) {
-        if (l1 == null)
+public class MergeTwoSortedLists21 {
+    public ListNode mergeTwoLists(ListNode l1, ListNode l2) {
+        if (l1 == null) {
             return l2;
-        if (l2 == null)
+        }
+        if (l2 == null) {
             return l1;
-        ListNode head;//��ʼ�����
+        }
+        ListNode head;
         if (l1.val >= l2.val) {
             head = l2;
             l2 = l2.next;

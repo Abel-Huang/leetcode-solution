@@ -9,10 +9,12 @@ import org.junit.Test;
  */
 public class RomanToInteger13Test {
     RomanToInteger13 roman;
+
     @Before
     public void init() {
         roman = new RomanToInteger13();
     }
+
     @Test
     public void testRomanToInt() {
         System.err.println(roman.romanToInt("III"));

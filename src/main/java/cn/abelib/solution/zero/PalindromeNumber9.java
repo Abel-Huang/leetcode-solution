@@ -1,18 +1,17 @@
 package cn.abelib.solution.zero;
 
 /**
- * Created by abel-huang on 2016/7/15.
+ *
+ * @author abel-huang
+ * @date 2016/7/15
  * if a number is negative, it will not be a palindrome
  */
-public class LeetCode_9 {
-    public static void main(String args[]) {
-        int nums = -2147447412;
-
-        System.out.println(isPalindrome(nums));
-    }
-
-    public static boolean isPalindrome(int x) {
-        String s = Math.abs(x) + "";
+public class PalindromeNumber9 {
+    public boolean isPalindrome(int x) {
+        if (x < 0) {
+            return false;
+        }
+        String s = x + "";
         int front = 0, end = s.length() - 1;
         boolean flag = true;
         while (front <= end) {
@@ -23,8 +22,6 @@ public class LeetCode_9 {
             front++;
             end--;
         }
-        if (x < 0)
-            flag = false;
         return flag;
     }
 }

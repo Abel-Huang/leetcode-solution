@@ -1,22 +1,19 @@
 package cn.abelib.solution.zero;
 
 /**
- * Created by abel-huang on 2016/8/7.
+ *
+ * @author abel-huang
+ * @date 2016/8/7
  * I should understand what is Longest Common Prefix.
  */
-public class LeetCode_14 {
-    public static void main(String args[]) {
-        String strs[] = {"aab", "aabs", "aabab"};
-        System.out.print(longestCommonPrefix(strs));
-    }
-
-    public static String longestCommonPrefix(String[] strs) {
-        String result = "";
+public class LongestCommonPrefix14 {
+    public  String longestCommonPrefix(String[] strs) {
+        StringBuilder sb = new StringBuilder();
         int minLength = 0;
         for (int i = 0; i < strs.length; i++) {
-            if (strs[i].length() == 0)
-                return result;
-            else {
+            if (strs[i].length() == 0) {
+                return "";
+            } else {
                 if (i == 0) {
                     minLength = strs[i].length();
                 }
@@ -28,11 +25,12 @@ public class LeetCode_14 {
         for (int i = 0; i < minLength; i++) {
             char temp = strs[0].charAt(i);
             for (int j = 1; j < strs.length; j++) {
-                if (strs[j].charAt(i) != temp)
-                    return result;
+                if (strs[j].charAt(i) != temp) {
+                    return sb.toString();
+                }
             }
-            result += temp;
+            sb.append(temp);
         }
-        return result;
+        return sb.toString();
     }
 }

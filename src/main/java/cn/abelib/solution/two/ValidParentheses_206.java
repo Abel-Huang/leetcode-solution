@@ -10,7 +10,7 @@ import java.util.List;
  * Created by  abel-huang on 2016/7/28.
  * Use a temp list to save every node.
  */
-public class LeetCode_206 {
+public class ValidParentheses_206 {
     @Test
     public void test() {
         ListNode head = new ListNode(1);

@@ -1,15 +1,14 @@
 package cn.abelib.solution.zero;
 
 /**
- * Created by abel-huang on 2016/7/25.
+ *
+ * @author abel-huang
+ * @date 2016/7/25
  * I will write a detail notes about this type of questions.
  */
-public class LeetCode_50 {
-    public static void main(String args[]) {
-        System.out.print(myPow(2.0, 5));
-    }
+public class PowxN50 {
 
-    public static double myPow(double x, int n) {
+    public double myPow(double x, int n) {
         if (n < 0) {
             if (n == Integer.MIN_VALUE)
                 return 1.0 / (myPow(x, Integer.MAX_VALUE) * x);
