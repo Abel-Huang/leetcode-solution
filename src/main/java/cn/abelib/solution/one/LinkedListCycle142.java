@@ -14,7 +14,6 @@ public class LinkedListCycle142 {
         }
     }
 
-
     public ListNode hasCycle(ListNode head) {
         if (head == null) {
             return null;

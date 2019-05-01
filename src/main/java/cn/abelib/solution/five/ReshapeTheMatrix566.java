@@ -1,6 +1,5 @@
 package cn.abelib.solution.five;
 
-import org.junit.Test;
 
 /**
  * @Author: abel.huang
@@ -26,9 +25,7 @@ public class ReshapeTheMatrix566 {
         return B;
     }
 
-    @Test
     public void matrixReshapeTest() {
-        int[][] nums = {{1,2,3, 4}};
-        System.out.println(matrixReshape(nums, 2, 2));
+
     }
 }

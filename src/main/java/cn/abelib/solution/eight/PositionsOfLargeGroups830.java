@@ -1,7 +1,5 @@
 package cn.abelib.solution.eight;
 
-import org.junit.Test;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -40,11 +38,5 @@ public class PositionsOfLargeGroups830 {
             }
         }
         return lists;
-    }
-
-    @Test
-    public void largeGroupPositionsTest() {
-        String S= "aaaaa";
-        System.out.println(largeGroupPositions(S));
     }
 }

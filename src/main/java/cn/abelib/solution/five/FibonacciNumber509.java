@@ -1,6 +1,5 @@
 package cn.abelib.solution.five;
 
-import org.junit.Test;
 
 /**
  * @Author: abel.huang
@@ -16,11 +15,5 @@ public class FibonacciNumber509 {
             return 1;
         }
         return fib(N-2)+ fib(N-1);
-    }
-
-    @Test
-    public void fibTest() {
-        int N = 10;
-        System.out.println(fib(N));
     }
 }

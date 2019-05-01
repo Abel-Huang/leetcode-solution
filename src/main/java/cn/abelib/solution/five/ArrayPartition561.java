@@ -1,6 +1,5 @@
 package cn.abelib.solution.five;
 
-import org.junit.Test;
 
 import java.util.Arrays;
 
@@ -24,9 +23,7 @@ public class ArrayPartition561 {
         return sum;
     }
 
-    @Test
     public void arrayPairSumTest() {
-        int[] nums = {1, 4, 3, 2};
-        System.out.println(arrayPairSum(nums));
+
     }
 }

@@ -8,22 +8,10 @@ import java.util.Stack;
  *
  * @author abel-huang
  * @date 2016/8/1
- * Use inorder_travel, if the order number is bigger than the pre_one,
- * and this is a validBST.
  */
 public class ValidateBinarySearchTree98 {
-    public static void main(String args[]) {
-        TreeNode root = new TreeNode(1);
-        root.left = new TreeNode(2);
-//        root.left.left=null;
-//        root.left.right=new TreeNode(3);
-        root.right = new TreeNode(3);
-//        root.right.left=null;
-//        root.right.right=new TreeNode(3);
-        System.out.print(isValidBST(root));
-    }
 
-    public static boolean isValidBST(TreeNode root) {
+    public boolean isValidBST(TreeNode root) {
         List<Integer> list = new ArrayList<>();
         Stack<TreeNode> stack = new Stack<>();
         TreeNode temp = root;

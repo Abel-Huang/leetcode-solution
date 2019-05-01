@@ -1,6 +1,5 @@
 package cn.abelib.solution.eight;
 
-import org.junit.Test;
 
 /**
  * @Author: abel.huang
@@ -21,11 +20,5 @@ public class TransposeMatrix867 {
             }
         }
         return B;
-    }
-
-    @Test
-    public void transposeTest() {
-        int[][] A = {{1,2,3, 4}};
-        System.out.println(transpose(A));
     }
 }
