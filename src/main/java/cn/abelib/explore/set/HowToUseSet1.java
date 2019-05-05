@@ -1,8 +1,8 @@
 package cn.abelib.explore.set;
 
-import org.junit.Test;
+import cn.abelib.util.annotation.Status;
+import cn.abelib.util.enums.StatusEnum;
 
-import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Set;
@@ -12,6 +12,7 @@ import java.util.Set;
  * @Date: 2019-01-12 21:51
  */
 public class HowToUseSet1 {
+    @Status(StatusEnum.ACCEPT)
     public int[] intersection(int[] nums1, int[] nums2) {
         if (nums1.length == 0 || nums2.length == 0) {
             return new int[Math.min(nums1.length, nums2.length)];
@@ -32,12 +33,5 @@ public class HowToUseSet1 {
             nums[i] = iterator.next();
         }
         return nums;
-    }
-
-    @Test
-    public void intersectionTest() {
-        int[] nums1 = {1,2,2,1};
-        int[] nums2 = {1, 2};
-        Arrays.stream(intersection(nums1, nums2)).forEach(System.out::println);
     }
 }
