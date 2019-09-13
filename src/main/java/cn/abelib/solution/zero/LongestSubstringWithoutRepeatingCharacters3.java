@@ -1,44 +1,74 @@
 package cn.abelib.solution.zero;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import org.junit.Test;
+
+import java.util.*;
 
 /**
  *
  * @author abel-huang
  * @date 2016/7/16
- * First time I forget to add the last hashmap to the list, so I can't get the right result,
- * I means when the loop is end, the last element of substring's length, so I add the code in
- * line 35, finally I AC this question.
+ *  无重复字符的最长子串
  */
 public class LongestSubstringWithoutRepeatingCharacters3 {
-    public int lengthOfLongestSubstring(String s) {
+    /**
+     * 使用HashMap
+     * @param s
+     * @return
+     */
+    public int lengthOfLongestSubstringWithHash(String s) {
         List<Integer> list = new ArrayList<>();
         int index = 0;
         Map<Character, Integer> hashMap = new HashMap<>();
         if (s == null || s.length() < 1) {
             return 0;
-        } else {
-            while (index < s.length()) {
-                if (!hashMap.containsKey(s.charAt(index))) {
-                    hashMap.put(s.charAt(index), index);
-                } else {
-                    list.add(hashMap.size());
-                    index = hashMap.get(s.charAt(index));
-                    hashMap.clear();
-                }
-                index++;
-            }
-            list.add(hashMap.size());
-            int max = 0;
-            for (int i = 0; i < list.size(); i++) {
-                if (list.get(i) > max) {
-                    max = list.get(i);
-                }
-            }
-            return max;
         }
+        while (index < s.length()) {
+            if (!hashMap.containsKey(s.charAt(index))) {
+                hashMap.put(s.charAt(index), index);
+            } else {
+                list.add(hashMap.size());
+                index = hashMap.get(s.charAt(index));
+                hashMap.clear();
+            }
+            index++;
+        }
+        list.add(hashMap.size());
+        int max = 0;
+        for (Integer integer : list) {
+            if (integer > max) {
+                max = integer;
+            }
+        }
+        return max;
     }
+
+    public int lengthOfLongestSubstring(String s) {
+        int len = s.length();
+        if (len < 1) {
+            return 0;
+        }
+        if (len == 1) {
+            return 1;
+        }
+        int[] map = new int[256];
+        int left = 0;
+        int max = 0;
+        for (int i = 0; i < len; i ++) {
+            int index = s.charAt(i);
+            if (map[index] == 0) {
+                map[index] = i - left + 1;
+            } else {
+                map[index] = i - left + 1;
+            }
+        }
+        return 0;
+    }
+
+    @Test
+    public void test() {
+        System.err.println((int)'a');
+
+    }
+
 }
