@@ -5,8 +5,8 @@
 [![@Abel-Huang](https://img.shields.io/uptimerobot/status/m778918918-3e92c097147760ee39d02d36.svg)](https://github.com/Abel-Huang/leetcodes)
 
 
-用来记录 LeetCode 的题目，目前只有 Algorithm 和 Database 的程序。
-*后续会使用golang代替Java*
+用来记录 LeetCode 的题解。
 
 
-### *160/865*
+
+### *185/865*

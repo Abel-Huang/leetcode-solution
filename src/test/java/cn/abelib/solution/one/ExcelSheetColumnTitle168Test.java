@@ -17,9 +17,9 @@ public class ExcelSheetColumnTitle168Test {
 
     @Test
     public void convertToTitle() {
-        System.err.println(title168.convertToTitle(26));
-//        System.err.println(title168.convertToTitle(27));
-//        System.err.println(title168.convertToTitle(28));
-//        System.err.println(title168.convertToTitle(701));
+        for (int i = 1; i < 30; i++) {
+            System.err.println(title168.convertToTitle4(i));
+        }
+        System.err.println(title168.convertToTitle4(701));
     }
 }
