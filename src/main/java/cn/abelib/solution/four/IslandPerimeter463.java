@@ -15,50 +15,32 @@ public class IslandPerimeter463 {
         for(int i = 0; i < grid.length; i++) {
             for (int j = 0; j < grid[0].length; j ++) {
                 if (grid[i][j] == 1) {
-                    if (i == 0 || i == grid.length - 1) {
-                        result ++;
-                        if (j > 0 && j < grid[0].length - 1) {
-                            if (grid[i][j - 1] == 0 ) {
-                                result ++;
-                            }
-                            if (grid[i][j + 1] == 0 ) {
-                                result ++;
-                            }
-                        }
+                    result += 4;
+                    if (j + 1 < grid[0].length && grid[i][j + 1] == 1) {
+                        result--;
                     }
-                    if (j == 0 || j == grid[0].length - 1) {
-                        result ++;
-                        if (i > 0 && i < grid.length - 1) {
-                            if (grid[i - 1][j] == 0 ) {
-                                result ++;
-                            }
-                            if (grid[i + 1][j] == 0 ) {
-                                result ++;
-                            }
-                        }
+                    if (j - 1 >= 0 && grid[i][j - 1] == 1) {
+                        result--;
                     }
-                    if (i > 0 && i < grid.length - 1 && j > 0 && j < grid[0].length - 1) {
-                        if (grid[i - 1][j] == 0 ) {
-                            result ++;
-                        }
-                        if (grid[i + 1][j] == 0 ) {
-                            result ++;
-                        }
-                        if (grid[i][j - 1] == 0 ) {
-                            result ++;
-                        }
-                        if (grid[i][j + 1] == 0 ) {
-                            result ++;
-                        }
+                    if (i - 1 >= 0 && grid[i - 1][j] == 1) {
+                        result--;
+                    }
+                    if (i + 1 < grid.length && grid[i + 1][j] == 1) {
+                        result--;
                     }
                 }
             }
         }
+
         return result;
     }
 
     @Test
     public void islandPerimeterTest() {
-        System.out.println();
+        int[][] island = {{0,1,0,0},
+                         {1,1,1,0},
+                         {0,1,0,0},
+                         {1,1,0,0}};
+        System.out.println(islandPerimeter(island));
     }
 }

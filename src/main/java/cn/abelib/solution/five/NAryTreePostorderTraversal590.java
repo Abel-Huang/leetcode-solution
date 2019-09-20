@@ -1,15 +1,13 @@
-package cn.abelib.solution.four;
+package cn.abelib.solution.five;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
-import java.util.stream.Collectors;
 
 /**
  * @Author: abel.huang
- * @Date: 2019-09-18 00:17
+ * @Date: 2019-09-20 23:34
  */
-public class NAryTreeLevelOrderTraversal429 {
+public class NAryTreePostorderTraversal590 {
     /**
      * Definition for a Node.
      */
@@ -25,17 +23,15 @@ public class NAryTreeLevelOrderTraversal429 {
         }
     }
 
-    public List<List<Integer>> levelOrder(Node root) {
-        List<List<Integer>> result = new ArrayList<>();
+    public List<Integer> postorder(Node root) {
+        List<Integer> result = new ArrayList<>();
         if (root == null) {
             return result;
         }
-
-        result.add(Collections.singletonList(root.val));
-
         for (Node node : root.children) {
-            result.addAll(levelOrder(node));
+            result.addAll(postorder(node));
         }
+        result.add(root.val);
         return result;
     }
 }
