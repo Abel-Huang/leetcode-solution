@@ -1,5 +1,7 @@
 package cn.abelib.solution.one;
 
+import org.junit.Test;
+
 /**
  * @Author: abel.huang
  * @Date: 2019-02-28 03:06
@@ -14,27 +16,42 @@ public class LinkedListCycle142 {
         }
     }
 
-    public ListNode hasCycle(ListNode head) {
-        if (head == null) {
+    public ListNode detectCycle(ListNode head) {
+        if (head == null || head.next == null) {
             return null;
         }
-        if (head.next == null) {
-            return null;
-        }
-        int index = 0;
-        ListNode node = head;
-        while (head != null) {
-            head = head.next;
-            if (head == null) {
+        ListNode fast = head;
+        ListNode slow = head;
+        boolean flag = false;
+        while (fast.next != null && fast.next.next != null) {
+            slow = slow.next;
+            fast = fast.next.next;
+            if (slow.equals(fast)) {
+                flag = true;
                 break;
-            } else {
-                node = node.next;
-                head = head.next;
-                if (head != null && node.val == head.val) {
-                    return head;
-                }
             }
         }
+        if (!flag) {
+            return null;
+        }
+        fast = head;
+        while (fast != null) {
+            if (slow.equals(fast)) {
+                return fast;
+            }
+            fast = fast.next;
+            slow = slow.next;
+        }
         return null;
+    }
+
+
+    @Test
+    public void detectCycleTest() {
+        ListNode head = new ListNode(1);
+        ListNode node = head;
+        node.next = new ListNode(2);
+        node.next.next = head;
+        System.err.println(detectCycle(head).val);
     }
 }

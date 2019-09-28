@@ -16,10 +16,7 @@ public class LinkedListCycle141 {
     }
 
     public boolean hasCycle(ListNode head) {
-        if (head == null) {
-            return false;
-        }
-        if (head.next == null) {
+        if (head == null || head.next == null) {
             return false;
         }
         ListNode node = head;
