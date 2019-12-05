@@ -1,22 +1,41 @@
 package cn.abelib.solution.nine;
 
+import org.junit.Test;
+
+import java.util.Arrays;
+
 /**
  * @Author: abel.huang
  * @Date: 2019-05-01 19:55
  */
 public class DIStringMatch942 {
     public int[] diStringMatch(String S) {
-        int[] result = new int[S.length() + 1];
-
-        int dCount = 0;
-        int iCount = 0;
-        for (int i = 0; i < S.length(); i ++) {
+        int len = S.length();
+        int[] result = new int[len + 1];
+        int max = len;
+        int min = 0;
+        for (int i = 0; i < len; i ++) {
             if (S.charAt(i) == 'D') {
-                dCount ++;
+                result[i] = max;
+                max --;
             } else {
-                iCount ++;
+                result[i] = min;
+                min ++;
             }
         }
-        return null;
+        result[len] = max;
+        return result;
+    }
+
+    @Test
+    public void diStringMatchTest() {
+        String s1 = "IDID";
+        System.err.println(Arrays.toString(diStringMatch(s1)));
+
+        String s2 = "III";
+        System.err.println(Arrays.toString(diStringMatch(s2)));
+
+        String s3 = "DDI";
+        System.err.println(Arrays.toString(diStringMatch(s3)));
     }
 }
