@@ -55,6 +55,6 @@ public class FindAllDuplicatesInAnArray442 {
     @Test
     public void findDuplicatesTest() {
         int[] nums = {5,4,6,7,9,3,10,9,5,6};
-        System.out.println(findDuplicates(nums));
+        System.out.println(findDuplicates2(nums));
     }
 }
