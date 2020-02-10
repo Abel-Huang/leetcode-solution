@@ -35,11 +35,24 @@ public class ReverseString344 {
         }
     }
 
+    private void reverseString2(char[] str) {
+        helper(0, str.length - 1, str);
+        System.err.println(new String(str));
+    }
 
+    private void helper(int start, int end, char [] str) {
+        if (str == null || start >= str.length || end <= start || end < 0) {
+            return;
+        }
+        char temp = str[start];
+        str[start] = str[end];
+        str[end] = temp;
+        helper(start + 1, end - 1, str);
+    }
 
     @Test
     public void reverseStringTest() {
-        String s = "hello";
-        System.out.println(reverseString(s));
+        String s = "Hannah";
+        reverseString2(s.toCharArray());
     }
 }

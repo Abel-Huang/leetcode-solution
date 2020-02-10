@@ -1,6 +1,7 @@
 package cn.abelib.solution.one;
 
 import java.util.HashMap;
+import java.util.Map;
 import java.util.Stack;
 
 /**
@@ -25,7 +26,7 @@ public class PathSum112 {
     }
 
     public static boolean hasPathSum(TreeNode root, int sum) {
-        HashMap<TreeNode, Integer> hashMap = new HashMap<>();
+        Map<TreeNode, Integer> hashMap = new HashMap<>();
         Stack<TreeNode> stack = new Stack<>();
         if (root == null) {
             return false;
