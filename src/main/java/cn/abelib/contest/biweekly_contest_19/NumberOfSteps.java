@@ -1,4 +1,4 @@
-package cn.abelib.contest.biweeklycontest19;
+package cn.abelib.contest.biweekly_contest_19;
 
 import org.junit.Test;
 

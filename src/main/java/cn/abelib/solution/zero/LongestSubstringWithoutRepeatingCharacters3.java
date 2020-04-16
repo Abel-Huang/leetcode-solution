@@ -19,21 +19,21 @@ public class LongestSubstringWithoutRepeatingCharacters3 {
     public int lengthOfLongestSubstringWithHash(String s) {
         List<Integer> list = new ArrayList<>();
         int index = 0;
-        Map<Character, Integer> hashMap = new HashMap<>();
+        Map<Character, Integer> map = new HashMap<>();
         if (s == null || s.length() < 1) {
             return 0;
         }
         while (index < s.length()) {
-            if (!hashMap.containsKey(s.charAt(index))) {
-                hashMap.put(s.charAt(index), index);
+            if (!map.containsKey(s.charAt(index))) {
+                map.put(s.charAt(index), index);
             } else {
-                list.add(hashMap.size());
-                index = hashMap.get(s.charAt(index));
-                hashMap.clear();
+                list.add(map.size());
+                index = map.get(s.charAt(index));
+                map.clear();
             }
             index++;
         }
-        list.add(hashMap.size());
+        list.add(map.size());
         int max = 0;
         for (Integer integer : list) {
             if (integer > max) {
