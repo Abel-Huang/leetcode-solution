@@ -17,13 +17,10 @@ public class MmaximumDepthOfBinaryTree104 {
     }
 
     public static int maxDepth(TreeNode root) {
-        int deep = 0;
-        if (root != null) {
-            int ldeep = maxDepth(root.left);
-            int rdeep = maxDepth(root.right);
-            deep = Math.max(ldeep + 1, rdeep + 1);
+        if (root == null) {
+            return 0;
         }
-        return deep;
+        return Math.max(maxDepth(root.left), maxDepth(root.right)) + 1;
     }
 
     public static class TreeNode {

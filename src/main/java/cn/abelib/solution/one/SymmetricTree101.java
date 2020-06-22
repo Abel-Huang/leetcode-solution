@@ -1,5 +1,7 @@
 package cn.abelib.solution.one;
 
+import org.junit.Test;
+
 import java.util.*;
 
 /**
@@ -9,23 +11,17 @@ import java.util.*;
  *
  */
 public class SymmetricTree101 {
-    public static void main(String args[]) {
-        TreeNode root = new TreeNode(1);
-        root.left = new TreeNode(2);
-        root.left.left = new TreeNode(3);
-        //   root.left.right=new TreeNode(3);
-        root.right = new TreeNode(3);
-        root.right.left = new TreeNode(2);
-        //    root.right.right=new TreeNode(3);
-//        for(int i:inorderLeft(root))
-//            System.out.print(i+" ");
-//        System.out.println(" ");
-//        for(int i:inorderRight(root))
-//            System.out.print(i+" ");
-        System.out.print(isSymmetric(root));
+    public class TreeNode {
+        int val;
+        TreeNode left;
+        TreeNode right;
+
+        TreeNode(int x) {
+            val = x;
+        }
     }
 
-    public static boolean isSymmetric(TreeNode root) {
+    public boolean isSymmetric1(TreeNode root) {
         if (root == null) {
             return true;
         }
@@ -35,11 +31,12 @@ public class SymmetricTree101 {
         if (root.right == null || root.left == null) {
             return false;
         }
-        if (!inorderLeft(root.left).equals(inorderRight(root.right)))
+        if (!inorderLeft(root.left).equals(inorderRight(root.right))) {
             return false;
+        }
         for (int i = 0; i < levelOrder(root).size(); i++) {
             for (int j = 0; j < levelOrder(root).get(i).size(); j++) {
-                if (levelOrder(root).get(i).get(j) != levelOrder(root).get(i).get(levelOrder(root).get(i).size() - j - 1)) {
+                if (!levelOrder(root).get(i).get(j).equals(levelOrder(root).get(i).get(levelOrder(root).get(i).size() - j - 1))) {
                     return false;
                 }
             }
@@ -47,7 +44,7 @@ public class SymmetricTree101 {
         return true;
     }
 
-    public static List<List<Integer>> levelOrder(TreeNode root) {
+    public List<List<Integer>> levelOrder(TreeNode root) {
         Queue<TreeNode> q = new LinkedList<>();
         List<List<Integer>> lists = new ArrayList<>();
         if (root == null)
@@ -72,7 +69,7 @@ public class SymmetricTree101 {
         }
     }
 
-    public static List<Integer> inorderLeft(TreeNode root) {
+    public  List<Integer> inorderLeft(TreeNode root) {
         List<Integer> list = new ArrayList<>();
         Stack<TreeNode> stack = new Stack<>();
         TreeNode temp = root;
@@ -90,7 +87,7 @@ public class SymmetricTree101 {
         return list;
     }
 
-    public static List<Integer> inorderRight(TreeNode root) {
+    public  List<Integer> inorderRight(TreeNode root) {
         List<Integer> list = new ArrayList<>();
         Stack<TreeNode> stack = new Stack<>();
         TreeNode temp = root;
@@ -108,13 +105,44 @@ public class SymmetricTree101 {
         return list;
     }
 
-    public static class TreeNode {
-        int val;
-        TreeNode left;
-        TreeNode right;
-
-        TreeNode(int x) {
-            val = x;
+    /**
+     * 递归实现
+     * @param root
+     * @return
+     */
+    public boolean isSymmetric(TreeNode root) {
+        if (root == null) {
+            return true;
         }
+        return isSymmetric(root.left, root.right);
+    }
+
+    private boolean isSymmetric(TreeNode node1, TreeNode node2) {
+        if (node1 == null && node2 == null) {
+            return true;
+        }
+        if (node1 == null || node2 == null) {
+            return false;
+        }
+        return node1.val == node2.val
+                && isSymmetric(node1.left, node2.right)
+                && isSymmetric(node1.right, node2.left);
+    }
+
+    @Test
+    public void test() {
+        TreeNode root = new TreeNode(1);
+        root.left = new TreeNode(2);
+        root.left.left = new TreeNode(3);
+        //   root.left.right=new TreeNode(3);
+        root.right = new TreeNode(3);
+        root.right.left = new TreeNode(2);
+        //    root.right.right=new TreeNode(3);
+//        for(int i:inorderLeft(root))
+//            System.out.print(i+" ");
+//        System.out.println(" ");
+//        for(int i:inorderRight(root))
+//            System.out.print(i+" ");
+        System.out.print(isSymmetric(root));
     }
 }

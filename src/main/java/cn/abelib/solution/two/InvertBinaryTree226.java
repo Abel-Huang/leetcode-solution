@@ -12,9 +12,9 @@ public class InvertBinaryTree226 {
         }
         root.left = invertTree(root.left);
         root.right = invertTree(root.right);
-        TreeNode temp =  root.left;
+        TreeNode node =  root.left;
         root.left = root.right;
-        root.right = temp;
+        root.right = node;
         return root;
     }
 

@@ -7,24 +7,6 @@ package cn.abelib.solution.one;
  * The left_tree equals right_tree.
  */
 public class SameTree100 {
-    public static void main(String args[]) {
-        int nums[] = {1, 2, 3, 4, 5};
-        //System.out.print(rob(nums));
-    }
-
-    public static boolean isSameTree(TreeNode p, TreeNode q) {
-        if (p == null && q == null) {
-            return true;
-        } else if (p == null || q == null) {
-            return false;
-        } else {
-
-            if (p.val != q.val) {
-                return false;
-            }
-            return isSameTree(p.left, q.left) && isSameTree(p.right, q.right);
-        }
-    }
 
     public class TreeNode {
         int val;
@@ -34,5 +16,19 @@ public class SameTree100 {
         TreeNode(int x) {
             val = x;
         }
+    }
+
+    public boolean isSameTree(TreeNode p, TreeNode q) {
+        if (p == null && q == null) {
+            return true;
+        }
+        if (p == null || q == null) {
+            return false;
+        }
+
+        if (p.val != q.val) {
+            return false;
+        }
+        return isSameTree(p.left, q.left) && isSameTree(p.right, q.right);
     }
 }
