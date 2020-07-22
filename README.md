@@ -12,9 +12,9 @@
 
 ## 滑动窗口
 1. LeetCode-209 [长度最小的子数组](https://leetcode-cn.com/problems/minimum-size-subarray-sum/)
-    [solution](src/main/java/cn.abelib/solution/MinimumSizeSubarraySum209.java)
+    [solution](src/main/java/cn/abelib/solution/two/MinimumSizeSubarraySum209.java)
 2. LeetCode-239 & 剑指 Offer 59 - I [滑动窗口最大值](https://leetcode-cn.com/problems/sliding-window-maximum/)
-    [solution](src/main/java/cn.abelib/point/SlidingWindowMaximum59_1.java)
+    [solution](src/main/java/cn/abelib/point/two/SlidingWindowMaximum59_1.java)
     
 ## 双指针
 
