@@ -13,23 +13,22 @@ public class Subsets78 {
     List<List<Integer>> lists = new ArrayList<>();
 
     public List<List<Integer>> subsets(int[] nums) {
-        if(nums == null || nums.length ==0){
+        if(nums == null || nums.length == 0){
             return lists;
         }
-
         List<Integer> list = new ArrayList<>();
-        process(list, nums, 0);
+        backtracking(list, nums, 0);
         return lists;
 
     }
 
-    private void process(List<Integer>list, int[] nums, int start){
-        System.err.println(list);
-        lists.add(list);
+    private void backtracking(List<Integer>list, int[] nums, int start){
+        lists.add(new ArrayList<>(list));
+
         for(int i = start; i < nums.length; i++){
             list.add(nums[i]);
-            process(list, nums, i+1);
-            list.remove(list.size()-1);
+            backtracking(list, nums, i + 1);
+            list.remove(list.size() - 1);
         }
     }
 
