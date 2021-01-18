@@ -12,9 +12,13 @@ import java.util.List;
 public class Permutations46 {
 
     List<List<Integer>> ans = new ArrayList<>();
-
+    boolean[] used;
     public List<List<Integer>> permute(int[] nums) {
         List<Integer> track = new ArrayList<>();
+        used = new boolean[nums.length];
+        for (int i = 0; i < used.length; i++) {
+            used[i] = false;
+        }
         backtrack(nums, track);
         return ans;
     }
@@ -26,13 +30,14 @@ public class Permutations46 {
         }
 
         for (int i = 0; i < nums.length; i ++) {
-            if (track.contains(nums[i])) {
+            if (used[i]) {
                 continue;
             }
+            used[i] = true;
             track.add(nums[i]);
             backtrack(nums, track);
-            int size = track.size();
-            track.remove(size - 1);
+            track.remove(track.size() - 1);
+            used[i] = false;
         }
     }
 

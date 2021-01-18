@@ -25,6 +25,11 @@ public class LetterCombinationsOfAPhoneNumber17 {
 
     private List<String> res;
 
+    /**
+     * @param digits 原始字符串
+     * @param index 当前处理的索引
+     * @param s 已经生成的字符串
+     */
     void findCombination(String digits, int index, String s) {
         if (index == digits.length()) {
             res.add(s);
@@ -48,6 +53,6 @@ public class LetterCombinationsOfAPhoneNumber17 {
 
     @Test
     public void letterCombinationsTest() {
-        System.err.println(letterCombinations("23"));
+        System.err.println(letterCombinations("234"));
     }
 }

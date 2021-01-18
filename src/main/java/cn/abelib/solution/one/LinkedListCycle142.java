@@ -17,34 +17,24 @@ public class LinkedListCycle142 {
     }
 
     public ListNode detectCycle(ListNode head) {
-        if (head == null || head.next == null) {
-            return null;
-        }
         ListNode fast = head;
         ListNode slow = head;
-        boolean flag = false;
-        while (fast.next != null && fast.next.next != null) {
+
+        do {
+            if (fast == null || fast.next == null) {
+                return null;
+            }
             slow = slow.next;
             fast = fast.next.next;
-            if (slow.equals(fast)) {
-                flag = true;
-                break;
-            }
-        }
-        if (!flag) {
-            return null;
-        }
-        fast = head;
-        while (fast != null) {
-            if (slow.equals(fast)) {
-                return fast;
-            }
-            fast = fast.next;
-            slow = slow.next;
-        }
-        return null;
-    }
+        }while (fast != slow);
 
+        fast = head;
+        while (slow != fast) {
+            slow = slow.next;
+            fast = fast.next;
+        }
+        return fast;
+    }
 
     @Test
     public void detectCycleTest() {

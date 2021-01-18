@@ -36,4 +36,13 @@ public class Sqrtx69 {
         }
         return mid;
     }
+
+    public int mySqrt2(int x) {
+        long a = x;
+        while (a * a > x) {
+            a = (a + x / a) / 2;
+        }
+        return (int) a;
+
+    }
 }

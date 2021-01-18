@@ -86,6 +86,6 @@ public class MinimumDepthOfBinaryTree111 {
         root.right = new TreeNode(2);
         root.right.left = null;
         root.right.right = new TreeNode(3);
-        System.out.print(minDepth(root) + " ");
+        System.out.print(minDepth1(root) + " ");
     }
 }

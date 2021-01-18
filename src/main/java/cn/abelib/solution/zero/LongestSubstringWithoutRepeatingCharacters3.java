@@ -1,5 +1,6 @@
 package cn.abelib.solution.zero;
 
+import org.junit.Assert;
 import org.junit.Test;
 
 import java.util.*;
@@ -16,7 +17,7 @@ public class LongestSubstringWithoutRepeatingCharacters3 {
      * @param s
      * @return
      */
-    public int lengthOfLongestSubstringWithHash(String s) {
+    public int lengthOfLongestSubstringSliceWindow(String s) {
         List<Integer> list = new ArrayList<>();
         int index = 0;
         Map<Character, Integer> map = new HashMap<>();
@@ -53,7 +54,6 @@ public class LongestSubstringWithoutRepeatingCharacters3 {
         }
         int[] map = new int[256];
         int left = 0;
-        int max = 0;
         for (int i = 0; i < len; i ++) {
             int index = s.charAt(i);
             if (map[index] == 0) {
@@ -66,9 +66,13 @@ public class LongestSubstringWithoutRepeatingCharacters3 {
     }
 
     @Test
-    public void test() {
-        System.err.println((int)'a');
-
+    public void lengthOfLongestSubstringTest() {
+        String s = "abcabcbb";
+        System.out.println(lengthOfLongestSubstring(s));
+        Assert.assertEquals(lengthOfLongestSubstring(s), 3);
+        String s1 = "bbbbb";
+        System.out.println(lengthOfLongestSubstring(s1));
+        String s2 = "pwwkew";
+        System.out.println(lengthOfLongestSubstring(s2));
     }
-
 }
