@@ -13,7 +13,7 @@ public class MaximumSubarray53 {
 
         for (int num : nums) {
             if (sum > 0) {
-                sum  += num;
+                sum += num;
             } else {
                 sum = num;
             }

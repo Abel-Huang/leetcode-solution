@@ -36,9 +36,35 @@ public class Permutation38 {
         }
     }
 
+    public String[] permutation2(String s) {
+        Set<String> set = new HashSet<>();
+        int len = s.length();
+        char[] a = s.toCharArray();
+        backtracking(a, set, 0, len);
+        return set.stream().toArray(String[]::new);
+    }
+
+    private void backtracking(char[] a, Set<String> set, int pos, int len) {
+        if (pos == a.length - 1) {
+            set.add(new String(a));
+            return;
+        }
+        for (int i = pos; i < len; i ++) {
+            swap(a, i, pos);
+            backtracking(a, set, pos + 1, len);
+            swap(a, i, pos);
+        }
+    }
+
+    public void swap(char[] a, int i, int j) {
+        char temp = a[i];
+        a[i] = a[j];
+        a[j] = temp;
+    }
+
     @Test
     public void permutationTest() {
-        System.err.println(Arrays.toString(permutation("aac")));
+        System.err.println(Arrays.toString(permutation2("aac")));
         int[] a = new int[2];
         System.err.println(a.length);
     }

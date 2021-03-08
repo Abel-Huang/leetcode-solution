@@ -1,5 +1,7 @@
 package cn.abelib.solution.zero;
 
+import org.junit.Test;
+
 import java.lang.Math;
 import java.lang.String;
 import java.lang.System;
@@ -8,7 +10,8 @@ import java.lang.System;
  *
  * @author abel-huang
  * @date 2016/8/2
- * DP problems.
+ * DP problems
+ * 二维dp问题
  */
 public class MinimumPathSum64 {
     public int minPathSum(int[][] grid) {
@@ -34,5 +37,11 @@ public class MinimumPathSum64 {
             }
         }
         return grid[m - 1][n - 1];
+    }
+
+    @Test
+    public void minPathSumTest() {
+        int[][] grid = {{1, 3, 1}, {1, 5, 1}, {4, 2, 1}};
+        System.err.println(minPathSum(grid));
     }
 }

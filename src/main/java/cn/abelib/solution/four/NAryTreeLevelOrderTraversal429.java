@@ -1,9 +1,9 @@
 package cn.abelib.solution.four;
 
 import java.util.ArrayList;
-import java.util.Collections;
+import java.util.LinkedList;
 import java.util.List;
-import java.util.stream.Collectors;
+import java.util.Queue;
 
 /**
  * @Author: abel.huang
@@ -19,23 +19,45 @@ public class NAryTreeLevelOrderTraversal429 {
 
         public Node() {}
 
-        public Node(int _val,List<Node> _children) {
+        public Node(int _val, List<Node> _children) {
             val = _val;
             children = _children;
         }
     }
 
     public List<List<Integer>> levelOrder(Node root) {
-        List<List<Integer>> result = new ArrayList<>();
+        List<List<Integer>> ans = new ArrayList<>();
         if (root == null) {
-            return result;
+            return ans;
         }
 
-        result.add(Collections.singletonList(root.val));
+        Queue<Node> queue = new LinkedList<>();
+        Queue<Node> level = new LinkedList<>();
+        queue.add(root);
 
-        for (Node node : root.children) {
-            result.addAll(levelOrder(node));
+        while (true) {
+            List<Integer> item = new ArrayList<>();
+            while (!queue.isEmpty()) {
+                Node node = queue.poll();
+                item.add(node.val);
+
+                for (Node child : node.children) {
+                    if (child != null) {
+                        level.add(child);
+                    }
+                }
+            }
+            ans.add(item);
+            if (level.isEmpty()) {
+                break;
+            }
+            queue.addAll(level);
+            level.clear();
+
         }
-        return result;
+        
+        return ans;
     }
+
+
 }
